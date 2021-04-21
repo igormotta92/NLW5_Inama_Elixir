@@ -1,0 +1,56 @@
+#Aula 1 Repo: https://github.com/joaopealves/inmana/tree/d30f7d9bd8bcddfb0aabc09dff4d27c5ff51f576
+
+#Configuração (noion): https://www.notion.so/NLW-05-3e8e240aa99246178c2b45e301c02f70
+
+#Primeira compilação é sempre demorada
+#Elixie é uma programação funcional
+
+-- mix phx.new inmana --no-html -no-webpack
+  - Criado projeto com Phonex (Framework do Elixir muito usado para backend, mas pode ser usada para front também )
+  - não responde html
+  - Não empacota html/css/js
+
+-- mix ecto.create 
+  - ecto (lib default para banco de dados)
+  - Postgres
+
+  - user: postgres
+  - senha: postgres
+
+-- mix deps.get (Baixar dependências)
+
+-- mix credo.gen.config (Configuração do redo)
+  - mix credo (Verificar se tem algum problema no credo)
+  - mix credo --strict (Verificação mais afundo de problemas no credo)
+
+-- mix format (Formata todo o código do projeto)
+
+.exs (Elixie Script - Script do Elixie que é excutado)
+.ex (Elixie - Arquivo)
+
+#Programação funcional (Composição por funções para modificar dados (Chão de fabrica))
+  --dado---->[Modulo.funcao]---dado_modificado-->[Modulo.funcao2]---dado_modificado---->resultado
+  -- Dado é imutavél. O dado não muda nunca na memoria enquanto a aplicação existe. É dessa forma que se usa todo o poder de processamento do computador. Se deve reescrever um dado.
+
+#Terminal 
+  iex (Elixie interativo)
+
+-------------------
+
+iex -S mix ("iex.bat -S mix" para Windows)
+  - Abrindo iex dentro do projeto, para usar modulo criado
+
+  # recompile
+    - Recompilar código
+
+  # alias Inmana.Welcomer
+    - Atribuir alias. Usa o último nome como apelido
+
+#Subir Servidor
+  - mix phx.server
+
+-------------------
+Código
+  missaoespacial
+
+

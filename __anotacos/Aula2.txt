@@ -1,0 +1,41 @@
+mix ecto.gn.migration <name>
+  - Criar Migration
+
+#uuid
+ - Não se repete
+ - É mais seguro
+ - Identificador único e universal
+ - Número de 128bit, quase impossível de se adivinhar
+
+mix ecto.migrate
+  - Executas migrations
+
+# "@"
+  - É uma variável de modulo
+  - Uma constante que funciona só no scopo do modulo
+
+# struct (%Inmana.Restaurant{})
+  - É uma Map com nome com mais funcionalidades
+
+#DOC Ecto: https://hexdocs.pm/ecto/Ecto.Changeset.html
+[
+  alias Inmana.Restaurant
+  Restaurant.changeset(%{})
+  Restaurant.changeset(%{name: "Siri", email: "cascudo@mail.com"})
+  changeset = Restaurant.changeset(%{name: "Siri", email: "cascudo@mail.com"})
+
+  alias Inmana.Repo
+  h Repo.insert (acesso DOC)
+
+  changeset |> Repo.insert()
+
+  %{name: "banana"} |> Restaurant.changeset() |> Repo.insert()
+
+]
+
+|> -> Pipper Operator
+with %{} Modulo.Funcao() do -> Pattern Match
+  - Railway oriented programming (Pesquisar)
+
+#Código
+   - #embuscadopoximonivel
