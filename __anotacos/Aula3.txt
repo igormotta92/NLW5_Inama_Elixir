@@ -1,0 +1,9 @@
+mix phx.routes
+    - lib\inmana_web\router.ex
+        - resources "/supplies", SuppliesController, only: [:create, :show]
+    - Criar todas rotas automaticamente
+
+iex.bat -S mix phx.server
+   - Iniciar o iex eo servidor no mesmo processo, importante para ve o e-mails enviados pelo Bamboo
+
+Elixir Style Guide : https://github.com/christopheradams/elixir_style_guide
