@@ -17,9 +17,11 @@ defmodule InmanaWeb.ErrorView do
   end
 
   def render("error.json", %{result: %Changeset{} = changeset}) do
-    %{
-      message: translate_erros(changeset)
-    }
+    %{message: translate_erros(changeset)}
+  end
+
+  def render("error.json", %{result: result}) do
+    %{message: result}
   end
 
   # DOC: https://hexdocs.pm/ecto/Ecto.Changeset.html#traverse_errors/2

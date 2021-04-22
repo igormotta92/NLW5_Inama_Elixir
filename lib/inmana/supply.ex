@@ -1,24 +1,27 @@
 # defmodule Projeto.Arquivo do
-defmodule Inmana.Restaurant do
+defmodule Inmana.Supply do
   use Ecto.Schema
   import Ecto.Changeset
 
-  alias Inmana.Supply
+  alias Inmana.Restaurant
 
   @primary_key {:id, :binary_id, autogenerate: true}
+  @foreign_key_type :binary_id
 
-  @required_params [:email, :name]
+  @required_params [:description, :expiration_date, :responsible, :restaurant_id]
 
   # Faz a geração de uma struct em forma de json, redenrisa os valores em json
   # required_params ++ [:id] adicionar id a lista
   @derive {Jason.Encoder, only: @required_params ++ [:id]}
 
-  schema "restaurants" do
-    field :email, :string
-    field :name, :string
+  schema "supplies" do
+    field :description, :string
+    # Formato Date defult Elix é YYYY-MM-DD
+    field :expiration_date, :date
+    field :responsible, :string
 
-    # Um restaurante tem vários suprimentos
-    has_many :supplies, Supply
+    # Um suprimento pertence a um restaurante
+    belongs_to :restaurant, Restaurant
 
     timestamps()
   end
@@ -31,10 +34,7 @@ defmodule Inmana.Restaurant do
     |> cast(params, @required_params)
     # [:email, :name]
     |> validate_required(@required_params)
-    |> validate_length(:name, min: 2)
-    # Sigio ~r/<regex>/ => Criação de regex
-    # |> validate_format(:email, ~r/@/)
-    |> validate_format(:email, ~r/\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i)
-    |> unique_constraint([:email])
+    |> validate_length(:description, min: 3)
+    |> validate_length(:responsible, min: 3)
   end
 end

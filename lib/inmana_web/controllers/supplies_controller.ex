@@ -1,10 +1,10 @@
-defmodule InmanaWeb.RestaurantsController do
+defmodule InmanaWeb.SuppliesController do
   # Defini que é um controller
   use InmanaWeb, :controller
 
-  # alias Inmana.Restaurants.Create
-  # alias Inmana.Restaurants.Create, as: RestaurantCreate
-  alias Inmana.Restaurant
+  # alias Inmana.Supplies.Create
+  # alias Inmana.Supplies.Create, as: RestaurantCreate
+  alias Inmana.Supply
   alias Inmana.FallbackController
 
   # Tratamento de exceções
@@ -12,32 +12,31 @@ defmodule InmanaWeb.RestaurantsController do
 
   # Create.call(params) retonar exceção quando erro
   def create(conn, params) do
-    # with {:ok, %Restaurant{} = restaurant} <- Create.call(params) do #Usando alias
-    # with {:ok, %Restaurant{} = restaurant} <- RestaurantCreate.call(params) do #Usando apelido
+    # with {:ok, %Supply{} = supply} <- Create.call(params) do #Usando alias
+    # with {:ok, %Supply{} = supply} <- RestaurantCreate.call(params) do #Usando apelido
     # Usando Facade :lib\inmana.ex
-    with {:ok, %Restaurant{} = restaurant} <- Inmana.create_restaurant(params) do
+    with {:ok, %Supply{} = supply} <- Inmana.create_supply(params) do
       conn
       |> put_status(:created)
       # redenrizar uma view
       # create.json msm nome existente no modulo de view
-      |> render("create.json", restaurant: restaurant)
+      |> render("create.json", supply: supply)
     end
   end
 
-  # %{"id" => uuid} <- params
   def show(conn, %{"id" => uuid}) do
-    with {:ok, %Restaurant{} = restaurant} <- Inmana.get_restaurant(uuid) do
+    with {:ok, %Supply{} = supply} <- Inmana.get_supply(uuid) do
       conn
       |> put_status(:ok)
-      |> render("show.json", restaurant: restaurant)
+      |> render("show.json", supply: supply)
     end
   end
 
   def index(conn, _params) do
-    with {:ok, restaurant} <- Inmana.index_restaurant() do
+    with {:ok, supply} <- Inmana.index_supply() do
       conn
       |> put_status(:ok)
-      |> render("index.json", restaurant: restaurant)
+      |> render("index.json", supply: supply)
     end
   end
 end

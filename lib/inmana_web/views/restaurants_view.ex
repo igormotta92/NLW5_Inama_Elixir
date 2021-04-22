@@ -8,6 +8,10 @@ defmodule InmanaWeb.RestaurantsView do
       restaurant: restaurant
     }
   end
+
+  # inline function
+  def render("show.json", %{restaurant: restaurant}), do: %{restaurant: restaurant}
+  def render("index.json", %{restaurant: restaurant}), do: %{restaurants: restaurant}
 end
 
 '''
