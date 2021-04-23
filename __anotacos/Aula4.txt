@@ -1,0 +1,70 @@
+spawn(fn -> IO.puts("oi") end)
+ - Criar um processo
+ - #PID, ID do processo
+
+ self()
+  - Identificar processo ativo
+
+Process.alive?(self())
+ - Verificar se o processo está ativo :return booleam
+
+# Uso de processos
+  # Task e processos em Elixie são short living, processos curtos.
+  # DOC: https://hexdocs.pm/elixir/Task.html
+  # Ler: Modelo de Atores
+    - https://pt.stackoverflow.com/questions/184793/em-programa%C3%A7%C3%A3o-o-que-%C3%A9-o-modelo-de-atores
+
+  iex.bat (Elixi Interative Terminal)
+
+    send(self(), :hello)
+    - Enviar mensagem para um processo (coloca na caixa de entrada de um processo)
+
+    # self()
+    receive do
+      :hello -> "Recebi"
+      :other -> Não era essa que eu esperava
+    end
+
+    # Modulo Task
+      task = Task.async(fn -> 1 + 1 end)
+      other_number = 5
+
+      other_number + Task.await(task)
+
+      # Valor máximo de concorrência (Quantidade de núcleos)
+      :max_concurrency = System.schedulers_online()
+
+      # stream: Operador layzing (Execução preguiçosa)
+        - O valor não é retornado até se precisar do valor
+
+      list = [
+        %{a: 1, b: 2},
+        %{a: 2, b: 2},
+        %{a: 3, b: 2},
+        %{a: 4, b: 2},
+        %{a: 5, b: 2},
+        %{a: 6, b: 2},
+        %{a: 7, b: 2},
+        %{a: 8, b: 2}]
+      Task.async_stream(list, fn elem -> IO.inspect(elem.a) end) |> Stream.run()
+        - Processos paralelos
+
+# Genserves
+  - Um processo como qualquer outro. Diferença principal é que ele não é short living.
+    É como se ele fosse um servidor web. Parece um cron.
+
+    iex.bat -S mix
+
+    mapa = %{}
+    Map.put(mapa, :a, 1)
+    :return %{a:1} - igual a um array_push() no PHP
+
+    #Exemplo
+    {:ok, pid} = GenServer.start(Inmana.Supplies.Scheduler, %{})
+    GenServer.cast(pid, {:put, :a, 5})
+    GenServer.call(pid, {:get, :a})
+
+#Código
+  - #universoinfinito
+
+
