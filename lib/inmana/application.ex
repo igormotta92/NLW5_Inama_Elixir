@@ -27,7 +27,7 @@ defmodule Inmana.Application do
     opts = [strategy: :one_for_one, name: Inmana.Supervisor]
 
     # Supervisor: Processo especial que supervisiona outros processos
-    # Chama as funções start_link de todos os modulos que está na
+    # Chama as funções start_link de todos os modulos que está na lista children
     # É carregado na inicialização do servidor
     Supervisor.start_link(children, opts)
   end

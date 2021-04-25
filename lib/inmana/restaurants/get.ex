@@ -8,11 +8,18 @@ defmodule Inmana.Restaurants.Get do
     |> handle_insert()
     '''
 
+    case Ecto.UUID.cast(uuid) do
+      :error -> {:error, %{result: "Is invalid UUID", status: :bad_request}}
+      {:ok, uuid} -> get(uuid)
+    end
+  end
+
+  def get(uuid) do
     # Pattern Match
     # case => Swith Case
     case Repo.get(Restaurant, uuid) do
       nil -> {:error, %{result: "Restaurant not found", status: :not_found}}
-      restaurant -> {:ok, restaurant}
+      supply -> {:ok, supply}
     end
   end
 

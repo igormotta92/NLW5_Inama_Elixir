@@ -1,0 +1,23 @@
+mix test
+  - Executar teste
+
+mix test --cover
+  - Demonstra a cobertura do total de arquivos com teste na aplicação
+  - Não precisa testar o que não se utiliza
+
+# lib: excoverall : https://github.com/parroty/excoveralls
+  - Lib para rodar e gerar statistica de teste
+  - Gera um HTML para visualizar teste
+  - Vem pronta para mandar cover de testes para mandar para vário serviços de
+
+  mix test --cover
+  mix coveralls.html
+
+# lib : ex_machina : https://github.com/thoughtbot/ex_machina
+  - Ajuda a criar dados fakes para as rotinas de teste
+  - Criar factores e usa "build_restaurant()" para usar os parâmetros de um
+    por exemplo
+
+#Código
+  - missaocumprida
+

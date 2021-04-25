@@ -54,7 +54,7 @@ defmodule Inmana.Supplies.Scheduler do
 
   # Receber qualquer menssagem
   @impl true
-  def handle_info(msg, state) do
+  def handle_info(_msg, state) do
     # IO.puts("Recebi")
     ExpirationNotification.send()
 
