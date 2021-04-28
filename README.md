@@ -24,8 +24,8 @@
 </p>
 
 <p align="center">
-  <a href="#rocket-tecnologias-usadas"> :rocket: Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#octocat-sobre-projeto">:octocat: Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-tecnologias-usadas"> :rocket: Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#thinking-como-contribuir">:thinking: Como Contribuir</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#bookmark-como-executar">:bookmark: Como Executar</a>&nbsp;&nbsp;&nbsp;
 </p>
