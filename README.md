@@ -12,8 +12,6 @@
 
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/igormotta92/NLW5_Inama_Elixir">
 
-
-
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/igormotta92/NLW5_Inama_Elixir">
 
   <a href="https://github.com/igormotta92/NLW5_Inama_Elixir/commits/master">
@@ -33,10 +31,6 @@
 </p>
 
 <br>
-
-<p align="center">
-  <img alt="Frontend" src="git/prev.png" width="100%">
-</p>
 
 ## :octocat: Sobre Projeto
 
