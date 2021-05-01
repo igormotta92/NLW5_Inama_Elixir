@@ -45,7 +45,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 > - [PostgreSQL](https://www.postgresql.org/)
 > - [Phoenix Framework][PhoenixFramework]
 > - [Bamboo][Bamboo]
-> - [VS Code](https://code.visualstudio.com/)
 
 ## :thinking: Como contribuir
 
